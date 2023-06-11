@@ -74,9 +74,9 @@ public class Main {
 
     private static boolean hasEmptyCells(char[][] state) {
 
-        for (int i = 0; i < state.length; i++) {
-            for (int j = 0; j < state[i].length; j++) {
-                if (state[i][j] == ' ') {
+        for (char[] row: state) {
+            for (char field: row) {
+                if(field == ' ') {
                     return true;
                 }
             }
@@ -87,35 +87,28 @@ public class Main {
     private static boolean isPossibleState(char[][] state) {
 
         int diff = 0;
-        for (int i = 0; i < state.length; i++) {
-            for (int j = 0; j < state[i].length; j++) {
-                diff += state[i][j] == 'X' ? 1 : state[i][j] == 'O' ? - 1 : 0;
+        for (char[] row: state) {
+            for (char field: row) {
+                diff += field == 'X' ? 1 : field == 'O' ? - 1 : 0;
             }
         }
 
         if (Math.abs(diff) > 1) {
             return false;
-        } else if (hasRow('X', state) && hasRow('O', state)) {
-            return false;
         } else {
-            return true;
+            return !(hasRow('X', state) && hasRow('O', state));
         }
     }
 
     private static boolean hasRow(char player, char[][] state) {
 
-        if ((state[0][0] == player && state[0][1] == player && state[0][2] == player) ||
+        return (state[0][0] == player && state[0][1] == player && state[0][2] == player) ||
             (state[1][0] == player && state[1][1] == player && state[1][2] == player) ||
             (state[2][0] == player && state[2][1] == player && state[2][2] == player) ||
             (state[0][0] == player && state[1][0] == player && state[2][0] == player) ||
             (state[0][1] == player && state[1][1] == player && state[2][1] == player) ||
             (state[0][2] == player && state[1][2] == player && state[2][2] == player) ||
             (state[0][0] == player && state[1][1] == player && state[2][2] == player) ||
-            (state[0][2] == player && state[1][1] == player && state[2][0] == player)
-            ) {
-            return true;
-        }
-
-        return false;
+            (state[0][2] == player && state[1][1] == player && state[2][0] == player);
     }
 }
