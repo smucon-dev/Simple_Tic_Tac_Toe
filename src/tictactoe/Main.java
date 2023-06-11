@@ -15,9 +15,9 @@ public class Main {
 
     private static void printGameGrid(char[][] state) {
         System.out.println("---------");
-        System.out.println("| " + state[0][0] + " " + state[0][1] + " " + state[0][2] + " |");
-        System.out.println("| " + state[1][0] + " " + state[1][1] + " " + state[1][2] + " |");
-        System.out.println("| " + state[2][0] + " " + state[2][1] + " " + state[2][2] + " |");
+        System.out.printf("| %c %c %c |%n", state[0][0], state[0][1], state[0][2]);
+        System.out.printf("| %c %c %c |%n", state[1][0], state[1][1], state[1][2]);
+        System.out.printf("| %c %c %c |%n", state[2][0], state[2][1], state[2][2]);
         System.out.println("---------");
     }
 
