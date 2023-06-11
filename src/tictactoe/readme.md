@@ -1,12 +1,12 @@
 ### A simple terminal based tic-tac-toe game ###
 
-<span style="font-family: monospace">
----------<br>
-| X O X |<br>
-| _ O _ |<br>
-| X O _ |<br>
----------<br>
-</span><br>
+```
+---------
+| X O X |
+| _ O _ |
+| X O _ |
+---------
+```
 Enter your moves like this: 
 
 > *Row + SPACE + Column + ENTER*
@@ -14,11 +14,11 @@ Enter your moves like this:
 For example:
 > *1 2 + ENTER*
 
-<span style="font-family: monospace">
----------<br>
-| _ X _ |<br>
-| _ _ _ |<br>
-| _ _ _ |<br>
----------<br>
-</span><br>
+```
+---------
+| _ X _ |
+| _ _ _ |
+| _ _ _ |
+---------
+```
 The first move is player 'X'.
