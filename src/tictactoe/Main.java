@@ -7,14 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var input = "_________";
+        char[][] state = new char[][]{{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
 
-        char[][] state = new char[3][3];
-        for (int i = 0; i < 9; i++) {
-            int col = i % 3;
-            int row = i / 3;
-            state[row][col] = input.charAt(i) == '_' ? ' ' : input.charAt(i);
-        }
         printGameGrid(state);
         processUserInput(state);
     }
